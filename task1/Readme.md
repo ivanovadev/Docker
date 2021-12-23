@@ -1,3 +1,6 @@
+1. Nginx
+Запустити Nginx Docker контейнер, який буде віддавати index.html (див. вище) по кореневому URL (/) на порту 8000 host машини.
+
 index.html
 <!DOCTYPE html>
 <html>
@@ -18,5 +21,4 @@ index.html
   </body>
 </html>
 
-1. Nginx
-Запустити Nginx Docker контейнер, який буде віддавати index.html (див. вище) по кореневому URL (/) на порту 8000 host машини.
+
