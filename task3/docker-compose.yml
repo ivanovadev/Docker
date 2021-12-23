@@ -1,0 +1,27 @@
+version: '3'
+
+services:
+    nodejs-app:
+        build:
+          context: ./task2/myapp #where dockerfile is
+        container_name: nodejsserver 
+        hostname: nodejsserver 
+        ports:
+            - "3000:3000" 
+        networks:
+            - helloworld_bridge  
+    nginx:
+        build:
+          context: ./nginx
+        container_name: nginx
+        hostname: nginx
+        ports:
+            - "8000:80" 
+        depends_on:
+            - nodejs-app # look at 1st service- run is it?
+        networks:
+            - helloworld_bridge
+
+networks: 
+  helloworld_bridge:
+    external: true #to coonect with exteernal world
